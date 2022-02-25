@@ -7,9 +7,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if request:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            url = "mongodb://neighborlyfuncappapi:ap28i3SHLhuYoVQzbeHLFU1u8hOVEyZqALT5NXfC5prdDlilnCD7MeqCGF4LZs5P2eIz6SLSCNGSv7uqPGrROQ==@neighborlyfuncappapi.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@neighborlyfuncappapi@"  # TODO: Update with appropriate MongoDB connection information
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['neighborlydb']
             collection = database['advertisements']
 
             rec_id1 = collection.insert_one(eval(request))
